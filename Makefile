@@ -1,6 +1,6 @@
 CC = gcc
 LIBFT = ./libft
-MINILIBX = ./minilibx-linux
+MINILIBX = ./mlx_linux
 CFLAGS = -Wextra -Wall -Werror -O3 -g3 -I. -I$(LIBFT)
 
 NAME = fdf
@@ -9,7 +9,7 @@ SOURCES = fdf_main.c
 
 BUILD = build
 OBJECTS = $(addprefix $(BUILD)/, $(SOURCES:.c=.o))
-HEADERS = fdf.h $(LIBFT)/libft.h $(MINILIBX)/mlx.h $(MINILIBX)/mlx_int.h
+HEADERS = fdf.h $(LIBFT)/libft.h $(MINILIBX)/mlx.h 
 
 all: $(NAME)
 
@@ -19,7 +19,7 @@ $(BUILD):
 $(BUILD)/%.o: %.c $(HEADERS) | $(BUILD)
 	@$(CC) $(CFLAGS) -c $< -o $@
 
-$(NAME): $(OBJECTS) $(LIBFT)/libft.a $(MINILIBX)/liblmx.a:
+$(NAME): $(OBJECTS) $(LIBFT)/libft.a $(MINILIBX)/liblmx.a
 	@$(CC) $(OBJECTS) $(LIBFT)/libft.a -o $(NAME)
 
 $(LIBFT)/libft.a:
