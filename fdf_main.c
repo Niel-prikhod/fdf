@@ -6,8 +6,18 @@
 /*   By: dprikhod <dprikhod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 21:55:42 by dprikhod          #+#    #+#             */
-/*   Updated: 2026/01/14 21:56:10 by dprikhod         ###   ########.fr       */
+/*   Updated: 2026/01/14 22:29:34 by dprikhod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
+
+int	main(void)
+{
+	void	*mlx;
+
+	mlx = mlx_init();
+	if (!mlx)
+		return (1);
+	return (0);
+}
