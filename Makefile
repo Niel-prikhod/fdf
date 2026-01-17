@@ -12,7 +12,8 @@ LDFLAGS_DEBUG = -fsanitize=address
 # PROJECT CONFIGURATION
 # =============================================================================
 NAME = fdf
-SOURCES = fdf_main.c $(addprefix src/,fdf_parser.c)
+SOURCES = fdf_main.c \
+		  $(addprefix src/,fdf_parser.c fdf_utils.c)
 HEADERS = fdf.h
 
 # Define missing variables

@@ -2,6 +2,7 @@ fdf
 fdf_example
 compile_commands.json
 *cache
+AGENTS.md
 
 # Prerequisites
 *.d
@@ -58,3 +59,4 @@ dkms.conf
 
 # debug information files
 *.dwo
+TODO.md
