@@ -6,7 +6,7 @@
 /*   By: dprikhod <dprikhod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 21:55:42 by dprikhod          #+#    #+#             */
-/*   Updated: 2026/01/16 23:34:34 by dprikhod         ###   ########.fr       */
+/*   Updated: 2026/01/22 20:53:25 by dprikhod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,7 @@ int	main(void)
 {
 	t_fdf	*fdf;
 
-	fdf = malloc(sizeof(t_fdf));
-	if (!fdf)
-		return (1);
-	fdf->mlx = mlx_init();
-	if (!fdf->mlx)
-		return (1);
-	fdf->window = mlx_new_window(fdf->mlx, 1280, 720, "FDF");
+	fdf = fdf_init();
 	mlx_loop(fdf->mlx);
 	fdf_clean_all(fdf);
 	return (0);
