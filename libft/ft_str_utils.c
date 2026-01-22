@@ -6,7 +6,7 @@
 /*   By: niel <niel@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/19 15:23:10 by dprikhod          #+#    #+#             */
-/*   Updated: 2026/01/17 08:39:42 by dprikhod         ###   ########.fr       */
+/*   Updated: 2026/01/22 20:40:06 by dprikhod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,29 +37,6 @@ char	*ft_strtrim(char const *s1, char const *set)
 		end--;
 	str_size = end - start;
 	return (ft_substr(s1, start, str_size));
-}
-
-int	ft_atoi(const char *str)
-{
-	int		sign;
-	long	result;
-
-	sign = 1;
-	result = 0;
-	while (*str == ' ' || (*str >= 9 && *str <= 13))
-		str++;
-	if (*str == '-' || *str == '+')
-	{
-		if (*str == '-')
-			sign = -1;
-		str++;
-	}
-	while (*str >= '0' && *str <= '9')
-	{
-		result = result * 10 + (*str - '0');
-		str++;
-	}
-	return (sign * result);
 }
 
 int	ft_tolower(int c)
