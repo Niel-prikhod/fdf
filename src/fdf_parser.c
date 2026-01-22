@@ -6,7 +6,7 @@
 /*   By: dprikhod <dprikhod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/16 21:05:10 by dprikhod          #+#    #+#             */
-/*   Updated: 2026/01/17 08:35:06 by dprikhod         ###   ########.fr       */
+/*   Updated: 2026/01/22 20:32:11 by dprikhod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,10 @@ int	parse_hex(char *str)
 {
 	int	color;
 
-	color = ft_atoi_base(str);
+	if (ft_strncmp(str, "0x", 2) == 0)
+		color = ft_atoi_base(str + 2, 16);
+	else
+		color = ft_atoi_base(str, 16);
 	return (color);
 }
 
