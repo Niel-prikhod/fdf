@@ -6,7 +6,7 @@
 /*   By: dprikhod <dprikhod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 21:50:38 by dprikhod          #+#    #+#             */
-/*   Updated: 2026/01/22 21:50:33 by dprikhod         ###   ########.fr       */
+/*   Updated: 2026/01/24 17:57:03 by dprikhod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include "libft/libft.h"
 # include "mlx_linux/mlx.h"
+# include <curses.h>
 # include <fcntl.h>
 # include <math.h>
 # include <stdio.h>
@@ -50,9 +51,10 @@ void			fdf_clean_all(t_fdf *fdf);
 t_fdf			*fdf_init(void);
 
 // fdf_parser.c
-t_map			*parse_dot_fdf(int fd);
+bool			fdf_parser(const char *filename, t_map *map);
 
 // fdf_file_handle.c
-int				count_lines(char *filename);
+int				get_map_dimensions(const char *filename, t_map *map);
+bool			check_args(int ac, char **av);
 
 #endif

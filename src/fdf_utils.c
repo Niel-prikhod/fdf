@@ -6,7 +6,7 @@
 /*   By: dprikhod <dprikhod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/16 23:16:28 by dprikhod          #+#    #+#             */
-/*   Updated: 2026/01/22 21:03:10 by dprikhod         ###   ########.fr       */
+/*   Updated: 2026/01/24 17:07:14 by dprikhod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,13 @@
 
 void	fdf_clean_all(t_fdf *fdf)
 {
-	int	y;
-
-	y = -1;
 	if (!fdf)
 		return ;
 	if (fdf->map)
 	{
-		if (fdf->map->points)
-		{
-			while (y++ < fdf->map->height)
-				free(fdf->map->points[y]);
-			free(fdf->map->points);
-		}
+		if (fdf->map->points[0])
+			free(fdf->map->points[0]);
+		free(fdf->map->points);
 		free(fdf->map);
 	}
 	if (fdf->window)
