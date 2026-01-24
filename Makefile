@@ -13,7 +13,7 @@ LDFLAGS_DEBUG = -fsanitize=address
 # =============================================================================
 NAME = fdf
 SOURCES = fdf_main.c \
-		  $(addprefix src/,fdf_parser.c fdf_utils.c)
+		  $(addprefix src/,fdf_parser.c fdf_utils.c fdf_file_handle.c)
 HEADERS = fdf.h
 
 # Define missing variables
