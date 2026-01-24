@@ -6,7 +6,7 @@
 /*   By: dprikhod <dprikhod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/16 21:05:10 by dprikhod          #+#    #+#             */
-/*   Updated: 2026/01/24 18:12:06 by dprikhod         ###   ########.fr       */
+/*   Updated: 2026/01/24 18:46:42 by dprikhod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,8 @@ t_points	parse_single_point(char *value, int x, int y)
 	it is set to white (0xFFFFFF)
  */
 {
-	t_points point;
-	char **z;
+	char		**z;
+	t_points	point;
 
 	z = ft_split(value, ',');
 	point.x = x;
