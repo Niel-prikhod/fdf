@@ -6,7 +6,7 @@
 /*   By: dprikhod <dprikhod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 21:50:38 by dprikhod          #+#    #+#             */
-/*   Updated: 2026/01/26 11:00:12 by dprikhod         ###   ########.fr       */
+/*   Updated: 2026/01/26 11:15:40 by dprikhod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,11 +42,20 @@ typedef struct s_map
 	t_points	**points;
 }				t_map;
 
+typedef struct s_view
+{
+	int			zoom;
+	int			offset_x;
+	int			offset_y;
+	float		z_scale;
+}				t_view;
+
 typedef struct s_fdf
 {
 	void		*mlx;
 	void		*window;
 	t_map		*map;
+	t_view		*view;
 }				t_fdf;
 
 // fdf_utils.c
