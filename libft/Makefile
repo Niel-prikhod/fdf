@@ -16,7 +16,8 @@ SOURCES = ft_is_group.c \
 	ft_printf_utils.c \
 	ft_bonus.c \
 	ft_bonus_2.c \
-	get_next_line.c
+	get_next_line.c \
+	ft_compare.c
 
 OBJECTS = $(SOURCES:.c=.o)
 

@@ -6,7 +6,7 @@
 /*   By: dprikhod <dprikhod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/19 14:34:56 by dprikhod          #+#    #+#             */
-/*   Updated: 2026/01/22 19:57:05 by dprikhod         ###   ########.fr       */
+/*   Updated: 2026/01/26 12:54:51 by dprikhod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,6 +110,10 @@ void				ft_lstiter(t_list *lst, void (*f)(void *));
 void				ft_lstclear(t_list **lst, void (*del)(void *));
 t_list				*ft_lstmap(t_list *lst, void *(*f)(void *),
 						void (*del)(void *));
+
+// ft_compare.c
+int					ft_min_int(int a, int b);
+int					ft_max_int(int a, int b);
 
 # define BUFFER_SIZE 4
 
