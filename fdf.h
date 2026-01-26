@@ -6,7 +6,7 @@
 /*   By: dprikhod <dprikhod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 21:50:38 by dprikhod          #+#    #+#             */
-/*   Updated: 2026/01/24 17:57:03 by dprikhod         ###   ########.fr       */
+/*   Updated: 2026/01/26 11:00:12 by dprikhod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,9 @@
 # include <string.h>
 # include <sys/time.h>
 # include <unistd.h>
+
+# define WINDOW_HEIGHT 1080
+# define WINDOW_WIDTH 1920
 
 typedef struct s_points
 {
