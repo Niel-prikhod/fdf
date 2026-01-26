@@ -6,7 +6,7 @@
 /*   By: dprikhod <dprikhod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 21:50:38 by dprikhod          #+#    #+#             */
-/*   Updated: 2026/01/26 14:52:34 by dprikhod         ###   ########.fr       */
+/*   Updated: 2026/01/26 16:22:46 by dprikhod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,15 @@ typedef struct s_proj
 	int			color;
 }				t_proj;
 
+typedef struct s_img
+{
+	void		*img_ptr;
+	int			bpp;
+	int			line_len;
+	int			endian;
+	void		*addr;
+}				t_img;
+
 typedef struct s_fdf
 {
 	void		*mlx;
@@ -71,6 +80,7 @@ typedef struct s_fdf
 // fdf_utils.c
 void			fdf_clean_all(t_fdf *fdf);
 t_fdf			*fdf_init(void);
+t_img			*init_img(void *mlx, int width, int height);
 
 // fdf_parser.c
 bool			fdf_parser(const char *filename, t_map *map);
@@ -82,8 +92,10 @@ bool			check_args(int ac, char **av);
 // fdf_math.c
 void			set_def_view(t_fdf *fdf);
 t_proj			apply_isometric(t_view *view, t_points *points);
+void			draw_line(t_proj p1, t_proj p2, t_fdf *fdf);
 
 // fdf_draw.c
 void			draw_map(t_fdf *fdf);
+void			my_mlx_pixel_put(t_img *img, int x, int y, int color);
 
 #endif

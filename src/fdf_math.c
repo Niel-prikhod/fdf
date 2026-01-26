@@ -6,7 +6,7 @@
 /*   By: dprikhod <dprikhod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/26 11:29:04 by dprikhod          #+#    #+#             */
-/*   Updated: 2026/01/26 13:56:57 by dprikhod         ###   ########.fr       */
+/*   Updated: 2026/01/26 16:13:18 by dprikhod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,4 +37,41 @@ t_proj	apply_isometric(t_view *view, t_points *points)
 	proj.y_proj = (int)y + view->offset_y;
 	proj.color = points->color;
 	return (proj);
+}
+
+void	draw_line(t_proj p1, t_proj p2, t_fdf *fdf)
+{
+	int	dx;
+	int	dy;
+	int	sx;
+	int	sy;
+	int	err;
+
+	dx = abs(p2.x_proj - p1.x_proj);
+	dy = -abs(p2.y_proj - p1.y_proj);
+	if (p1.x_proj < p2.x_proj)
+		sx = 1;
+	else
+		sx = -1;
+	if (p1.y_proj < p2.y_proj)
+		sy = 1;
+	else
+		sy = -1;
+	err = dx + dy;
+	while (1)
+	{
+		my_mlx_pixel_put(fdf->img, p1.x_proj, p1.y_proj, p1.color);
+		if (p1.x_proj == p2.x_proj && p1.y_proj == p2.y_proj)
+			break ;
+		if (err * 2 >= dy)
+		{
+			err += dy;
+			p1.x_proj += sx;
+		}
+		if (err * 2 <= dx)
+		{
+			err += dx;
+			p1.y_proj += sy;
+		}
+	}
 }

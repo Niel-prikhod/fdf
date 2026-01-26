@@ -6,14 +6,20 @@
 /*   By: dprikhod <dprikhod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/26 14:37:49 by dprikhod          #+#    #+#             */
-/*   Updated: 2026/01/26 14:50:31 by dprikhod         ###   ########.fr       */
+/*   Updated: 2026/01/26 16:15:09 by dprikhod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
 
-void	draw_line(t_proj p1, t_proj p2, t_fdf *fdf)
+void	my_mlx_pixel_put(t_img *img, int x, int y, int color)
 {
+	char	*dst;
+
+	if (x < 0 || x >= WINDOW_WIDTH || y < 0 || y >= WINDOW_HEIGHT)
+		return ;
+	dst = img->addr + (y * img->line_len + x * (img->bpp / 8));
+	*(unsigned int *)dst = color;
 }
 
 void	draw_map(t_fdf *fdf)

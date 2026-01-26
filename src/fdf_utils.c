@@ -6,7 +6,7 @@
 /*   By: dprikhod <dprikhod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/16 23:16:28 by dprikhod          #+#    #+#             */
-/*   Updated: 2026/01/26 11:17:15 by dprikhod         ###   ########.fr       */
+/*   Updated: 2026/01/26 16:18:49 by dprikhod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,4 +53,21 @@ t_fdf	*fdf_init(void)
 	if (!fdf->map)
 		return (fdf_clean_all(fdf), NULL);
 	return (fdf);
+}
+
+t_img	*init_img(void *mlx, int width, int height)
+{
+	t_img	*img;
+
+	img = malloc(sizeof(t_img));
+	if (!img)
+		return (NULL);
+	img->img_ptr = mlx_new_image(mlx, width, height);
+	if (!img->img_ptr)
+		return (free(img), NULL);
+	img->addr = mlx_get_data_addr(img->img_ptr, &img->bpp, &img->line_len,
+			&img->endian);
+	if (!img->addr)
+		return (mlx_destroy_image(mlx, img->img_ptr), free(img), NULL);
+	return (img);
 }
