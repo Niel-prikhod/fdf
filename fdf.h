@@ -6,7 +6,7 @@
 /*   By: dprikhod <dprikhod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 21:50:38 by dprikhod          #+#    #+#             */
-/*   Updated: 2026/01/26 16:22:46 by dprikhod         ###   ########.fr       */
+/*   Updated: 2026/01/26 16:27:27 by dprikhod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ typedef struct s_img
 	int			bpp;
 	int			line_len;
 	int			endian;
-	void		*addr;
+	char		*addr;
 }				t_img;
 
 typedef struct s_fdf
