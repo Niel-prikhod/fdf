@@ -6,7 +6,7 @@
 /*   By: dprikhod <dprikhod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 21:50:38 by dprikhod          #+#    #+#             */
-/*   Updated: 2026/01/26 14:00:35 by dprikhod         ###   ########.fr       */
+/*   Updated: 2026/01/26 14:52:34 by dprikhod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,5 +82,8 @@ bool			check_args(int ac, char **av);
 // fdf_math.c
 void			set_def_view(t_fdf *fdf);
 t_proj			apply_isometric(t_view *view, t_points *points);
+
+// fdf_draw.c
+void			draw_map(t_fdf *fdf);
 
 #endif
