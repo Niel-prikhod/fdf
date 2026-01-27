@@ -6,7 +6,7 @@
 /*   By: dprikhod <dprikhod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 21:50:38 by dprikhod          #+#    #+#             */
-/*   Updated: 2026/01/27 10:58:31 by dprikhod         ###   ########.fr       */
+/*   Updated: 2026/01/27 12:26:24 by dprikhod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@
 
 # define WINDOW_WIDTH 1920
 # define WINDOW_HEIGHT 1080
-# define ANGLE 30 * M_PI / 180
+# define ANGLE 0.523598775598
 
 typedef struct s_points
 {
@@ -98,5 +98,7 @@ void			draw_line(t_proj p1, t_proj p2, t_fdf *fdf);
 // fdf_draw.c
 void			draw_map(t_fdf *fdf);
 void			my_mlx_pixel_put(t_img *img, int x, int y, int color);
+
+
 
 #endif
