@@ -6,7 +6,7 @@
 /*   By: dprikhod <dprikhod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/26 11:29:04 by dprikhod          #+#    #+#             */
-/*   Updated: 2026/01/27 16:10:39 by dprikhod         ###   ########.fr       */
+/*   Updated: 2026/01/27 16:59:46 by dprikhod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,8 @@ void	set_def_view(t_fdf *fdf)
 			WINDOW_WIDTH / fdf->map->width) / 2;
 	fdf->view->offset_x = WINDOW_WIDTH / 2;
 	fdf->view->offset_y = WINDOW_HEIGHT / 2;
-	fdf->view->z_scale = 0.1;
+	if (Z_SCALE != 0)
+		fdf->view->z_scale = Z_SCALE;
 	fdf->view->map_center_x = (float)(fdf->map->width - 1) / 2;
 	fdf->view->map_center_y = (float)(fdf->map->height - 1) / 2;
 }
@@ -33,8 +34,8 @@ t_proj	apply_isometric(t_view *view, t_points *points)
 	z = (float)points->z_raw * view->z_scale;
 	x = (float)points->x_raw - view->map_center_x;
 	y = (float)points->y_raw - view->map_center_y;
-	x = (x + y) * sin(ANGLE);
-	y = (x - y) * cos(ANGLE) - z;
+	x = (x - y) * sin(ANGLE);
+	y = (x + y) * cos(ANGLE) - z;
 	x *= view->zoom;
 	y *= view->zoom;
 	proj.x_proj = (int)x + view->offset_x;

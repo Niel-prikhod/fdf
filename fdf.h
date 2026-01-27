@@ -6,7 +6,7 @@
 /*   By: dprikhod <dprikhod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 21:50:38 by dprikhod          #+#    #+#             */
-/*   Updated: 2026/01/27 16:02:42 by dprikhod         ###   ########.fr       */
+/*   Updated: 2026/01/27 16:27:28 by dprikhod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@
 # define WINDOW_WIDTH 1920
 # define WINDOW_HEIGHT 1080
 # define ANGLE 0.523598775598
+# define Z_SCALE 0.05
 
 typedef struct s_points
 {
