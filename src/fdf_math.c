@@ -6,7 +6,7 @@
 /*   By: dprikhod <dprikhod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/26 11:29:04 by dprikhod          #+#    #+#             */
-/*   Updated: 2026/01/26 16:13:18 by dprikhod         ###   ########.fr       */
+/*   Updated: 2026/01/27 11:46:44 by dprikhod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ void	set_def_view(t_fdf *fdf)
 	fdf->view->offset_x = WINDOW_WIDTH / 2;
 	fdf->view->offset_y = WINDOW_HEIGHT / 2;
 	fdf->view->z_scale = 1;
+	fdf->view->map_center_x = (float)(fdf->map->width - 1) / 2;
+	fdf->view->map_center_y = (float)(fdf->map->height - 1) / 2;
 }
 
 t_proj	apply_isometric(t_view *view, t_points *points)

@@ -6,7 +6,7 @@
 /*   By: dprikhod <dprikhod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/16 21:05:10 by dprikhod          #+#    #+#             */
-/*   Updated: 2026/01/24 18:46:42 by dprikhod         ###   ########.fr       */
+/*   Updated: 2026/01/27 11:43:20 by dprikhod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,9 @@ t_points	parse_single_point(char *value, int x, int y)
 	t_points	point;
 
 	z = ft_split(value, ',');
-	point.x = x;
-	point.y = y;
-	point.z = ft_atoi(z[0]);
+	point.x_raw = x;
+	point.y_raw = y;
+	point.z_raw = ft_atoi(z[0]);
 	if (z[1])
 		point.color = parse_hex(z[1]);
 	else
@@ -71,7 +71,7 @@ bool	extract_data(int fd, t_map *map)
 		return (false);
 	map->points = malloc(sizeof(t_points *) * map->height);
 	if (!map->points)
-		return (free(all_points), map->points = NULL, false);
+		return (free(all_points), false);
 	y = 0;
 	while (buf)
 	{

@@ -6,7 +6,7 @@
 /*   By: dprikhod <dprikhod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/16 23:16:28 by dprikhod          #+#    #+#             */
-/*   Updated: 2026/01/26 16:18:49 by dprikhod         ###   ########.fr       */
+/*   Updated: 2026/01/27 11:40:11 by dprikhod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,14 @@ void	fdf_clean_all(t_fdf *fdf)
 		free(fdf->view);
 	if (fdf->window)
 		mlx_destroy_window(fdf->mlx, fdf->window);
+	if (fdf->img)
+	{
+		mlx_destroy_image(fdf->mlx, fdf->img->img_ptr);
+		free(fdf->img);
+	}
 	if (fdf->mlx)
 		mlx_destroy_display(fdf->mlx);
 	free(fdf);
-	fdf = NULL;
 }
 
 t_fdf	*fdf_init(void)
@@ -50,8 +54,9 @@ t_fdf	*fdf_init(void)
 	if (!fdf->map)
 		return (fdf->view = NULL, fdf_clean_all(fdf), NULL);
 	fdf->view = malloc(sizeof(t_view));
-	if (!fdf->map)
+	if (!fdf->view)
 		return (fdf_clean_all(fdf), NULL);
+	fdf->img = NULL;
 	return (fdf);
 }
 
