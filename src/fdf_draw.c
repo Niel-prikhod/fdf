@@ -37,7 +37,6 @@ void	draw_map(t_fdf *fdf)
 		while (x < fdf->map->width)
 		{
 			p1 = apply_isometric(fdf->view, &fdf->map->points[y][x]);
-			x++;
 			if (x < fdf->map->width - 1)
 			{
 				p_r = apply_isometric(fdf->view, &fdf->map->points[y][x + 1]);
@@ -48,6 +47,7 @@ void	draw_map(t_fdf *fdf)
 				p_d = apply_isometric(fdf->view, &fdf->map->points[y + 1][x]);
 				draw_line(p1, p_d, fdf);
 			}
+			x++;
 		}
 		y++;
 	}
