@@ -6,7 +6,7 @@
 /*   By: dprikhod <dprikhod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/26 14:37:49 by dprikhod          #+#    #+#             */
-/*   Updated: 2026/01/27 11:33:02 by dprikhod         ###   ########.fr       */
+/*   Updated: 2026/01/27 16:03:45 by dprikhod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ void	my_mlx_pixel_put(t_img *img, int x, int y, int color)
 	dst = img->addr + (y * img->line_len + x * (img->bpp / 8));
 	*(unsigned int *)dst = color;
 }
+
+void	init_algo(t_algo *a, t_points p1, t_points p2);
 
 void	draw_map(t_fdf *fdf)
 {
@@ -41,6 +43,7 @@ void	draw_map(t_fdf *fdf)
 			{
 				p_r = apply_isometric(fdf->view, &fdf->map->points[y][x + 1]);
 				draw_line(p1, p_r, fdf);
+				printf("line drawn to the right\n");
 			}
 			if (y < fdf->map->height - 1)
 			{

@@ -6,7 +6,7 @@
 /*   By: dprikhod <dprikhod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 21:50:38 by dprikhod          #+#    #+#             */
-/*   Updated: 2026/01/27 12:26:24 by dprikhod         ###   ########.fr       */
+/*   Updated: 2026/01/27 16:02:42 by dprikhod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,6 +78,16 @@ typedef struct s_fdf
 	t_img		*img;
 }				t_fdf;
 
+typedef struct s_algo
+{
+	int			dx;
+	int			dy;
+	int			sx;
+	int			sy;
+	int			err;
+	int			e2;
+}				t_algo;
+
 // fdf_utils.c
 void			fdf_clean_all(t_fdf *fdf);
 t_fdf			*fdf_init(void);
@@ -98,7 +108,5 @@ void			draw_line(t_proj p1, t_proj p2, t_fdf *fdf);
 // fdf_draw.c
 void			draw_map(t_fdf *fdf);
 void			my_mlx_pixel_put(t_img *img, int x, int y, int color);
-
-
 
 #endif
