@@ -6,7 +6,7 @@
 /*   By: dprikhod <dprikhod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 21:50:38 by dprikhod          #+#    #+#             */
-/*   Updated: 2026/01/26 16:27:27 by dprikhod         ###   ########.fr       */
+/*   Updated: 2026/01/27 10:58:31 by dprikhod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,6 +75,7 @@ typedef struct s_fdf
 	void		*window;
 	t_map		*map;
 	t_view		*view;
+	t_img		*img;
 }				t_fdf;
 
 // fdf_utils.c

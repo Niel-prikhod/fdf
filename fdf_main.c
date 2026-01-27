@@ -6,7 +6,7 @@
 /*   By: dprikhod <dprikhod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 21:55:42 by dprikhod          #+#    #+#             */
-/*   Updated: 2026/01/24 17:57:07 by dprikhod         ###   ########.fr       */
+/*   Updated: 2026/01/27 11:36:11 by dprikhod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,11 @@ int	main(int argc, char **argv)
 		return (1);
 	if (!fdf_parser(argv[1], fdf->map))
 		return (fdf_clean_all(fdf), 1);
+	set_def_view(fdf);
+	fdf->img = init_img(fdf->mlx, fdf->map->width, fdf->map->height);
+	if (!fdf->img)
+		return (fdf_clean_all(fdf), 1);
+	draw_map(fdf);
 	mlx_loop(fdf->mlx);
 	fdf_clean_all(fdf);
 	return (0);
