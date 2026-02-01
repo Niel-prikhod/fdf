@@ -6,7 +6,7 @@
 /*   By: dprikhod <dprikhod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 21:50:38 by dprikhod          #+#    #+#             */
-/*   Updated: 2026/01/27 16:27:28 by dprikhod         ###   ########.fr       */
+/*   Updated: 2026/02/01 11:43:26 by dprikhod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,9 @@
 
 # define WINDOW_WIDTH 1920
 # define WINDOW_HEIGHT 1080
+# define ESC_CODE 65307
 # define ANGLE 0.523598775598
-# define Z_SCALE 0.05
+# define Z_SCALE 0.5
 
 typedef struct s_points
 {
@@ -109,5 +110,8 @@ void			draw_line(t_proj p1, t_proj p2, t_fdf *fdf);
 // fdf_draw.c
 void			draw_map(t_fdf *fdf);
 void			my_mlx_pixel_put(t_img *img, int x, int y, int color);
+
+// fdf_hooks.c
+void			fdf_hook(t_fdf *fdf);
 
 #endif
