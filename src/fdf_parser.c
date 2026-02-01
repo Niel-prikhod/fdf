@@ -6,7 +6,7 @@
 /*   By: dprikhod <dprikhod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/16 21:05:10 by dprikhod          #+#    #+#             */
-/*   Updated: 2026/01/27 11:43:20 by dprikhod         ###   ########.fr       */
+/*   Updated: 2026/02/01 14:04:26 by dprikhod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,8 @@ t_points	parse_single_point(char *value, int x, int y)
 	it is set to white (0xFFFFFF)
  */
 {
-	char		**z;
-	t_points	point;
+	char **z;
+	t_points point;
 
 	z = ft_split(value, ',');
 	point.x_raw = x;
@@ -90,7 +90,7 @@ bool	fdf_parser(const char *filename, t_map *map)
 	bool	result;
 
 	if (get_map_dimensions(filename, map) < 0)
-		return (false);
+		return (ft_putstr_fd("WRONG DIMENSIONS\n", 2), false);
 	fd = open(filename, O_RDONLY);
 	if (fd < 0)
 		return (false);

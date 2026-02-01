@@ -6,7 +6,7 @@
 /*   By: dprikhod <dprikhod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 21:50:38 by dprikhod          #+#    #+#             */
-/*   Updated: 2026/02/01 11:43:26 by dprikhod         ###   ########.fr       */
+/*   Updated: 2026/02/01 14:06:15 by dprikhod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@
 # define WINDOW_HEIGHT 1080
 # define ESC_CODE 65307
 # define ANGLE 0.523598775598
-# define Z_SCALE 0.5
+# define Z_SCALE 0.1
 
 typedef struct s_points
 {

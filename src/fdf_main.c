@@ -6,7 +6,7 @@
 /*   By: dprikhod <dprikhod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 21:55:42 by dprikhod          #+#    #+#             */
-/*   Updated: 2026/02/01 11:47:30 by dprikhod         ###   ########.fr       */
+/*   Updated: 2026/02/01 14:05:50 by dprikhod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,11 +30,10 @@ int	main(int argc, char **argv)
 	fdf->img = init_img(fdf->mlx, WINDOW_WIDTH, WINDOW_HEIGHT);
 	if (!fdf->img)
 		return (fdf_clean_all(fdf), 1);
-	ft_printf("zoom is %d\n", fdf->view->zoom);
+	ft_printf("Rendering...\n");
 	draw_map(fdf);
-	ft_printf("Map is rendered! Ready to draw\n");
-	mlx_put_image_to_window(fdf->mlx, fdf->window, fdf->img->img_ptr, 0, 0);
 	ft_printf("Done!\n");
+	mlx_put_image_to_window(fdf->mlx, fdf->window, fdf->img->img_ptr, 0, 0);
 	fdf_hook(fdf);
 	mlx_loop(fdf->mlx);
 	fdf_clean_all(fdf);

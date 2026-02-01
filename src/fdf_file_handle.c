@@ -6,7 +6,7 @@
 /*   By: dprikhod <dprikhod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/22 21:36:48 by dprikhod          #+#    #+#             */
-/*   Updated: 2026/01/24 18:49:05 by dprikhod         ###   ########.fr       */
+/*   Updated: 2026/02/01 14:04:02 by dprikhod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ static int	count_values_in_line(const char *line)
 	in_value = 0;
 	while (*line)
 	{
-		if (*line != ' ' && *line != '\t')
+		if (*line != ' ' && *line != '\t' && *line != '\n')
 		{
 			if (!in_value)
 			{
