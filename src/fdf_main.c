@@ -6,7 +6,7 @@
 /*   By: dprikhod <dprikhod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/14 21:55:42 by dprikhod          #+#    #+#             */
-/*   Updated: 2026/02/01 14:05:50 by dprikhod         ###   ########.fr       */
+/*   Updated: 2026/02/01 14:11:45 by dprikhod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ int	main(int argc, char **argv)
 	fdf = fdf_init();
 	if (!fdf)
 		return (1);
+	ft_printf("Parsing...\n");
 	if (!fdf_parser(argv[1], fdf->map))
 		return (fdf_clean_all(fdf), 1);
 	set_def_view(fdf);

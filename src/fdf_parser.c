@@ -29,8 +29,8 @@ t_points	parse_single_point(char *value, int x, int y)
 	it is set to white (0xFFFFFF)
  */
 {
-	char **z;
-	t_points point;
+	char		**z;
+	t_points	point;
 
 	z = ft_split(value, ',');
 	point.x_raw = x;
