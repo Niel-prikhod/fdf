@@ -6,7 +6,7 @@
 /*   By: dprikhod <dprikhod@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/16 23:16:28 by dprikhod          #+#    #+#             */
-/*   Updated: 2026/01/27 11:40:11 by dprikhod         ###   ########.fr       */
+/*   Updated: 2026/02/01 13:19:44 by dprikhod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,12 @@ void	fdf_clean_all(t_fdf *fdf)
 		return ;
 	if (fdf->map)
 	{
-		if (fdf->map->points[0])
-			free(fdf->map->points[0]);
-		free(fdf->map->points);
+		if (fdf->map->points)
+		{
+			if (fdf->map->points[0])
+				free(fdf->map->points[0]);
+			free(fdf->map->points);
+		}
 		free(fdf->map);
 	}
 	if (fdf->view)

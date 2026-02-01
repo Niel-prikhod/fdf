@@ -100,6 +100,9 @@ test:
 	@echo "📋 Step 3: Memory check..."
 	@make valgrind || (echo "❌ Test failed at memory check" && exit 1)
 	@echo "✅ All tests passed successfully!"
+	
+mars: re
+		./fdf test_maps/42.fdf
 
 help:
 	@echo "📖 Available targets:"
