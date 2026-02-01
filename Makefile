@@ -102,7 +102,7 @@ test:
 	@echo "✅ All tests passed successfully!"
 	
 mars: re
-		./fdf test_maps/42.fdf
+		./fdf test_maps/mars.fdf
 
 help:
 	@echo "📖 Available targets:"
